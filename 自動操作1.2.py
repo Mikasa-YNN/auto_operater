@@ -108,6 +108,10 @@ resize_height = resize_width / img_width * img_height
 screendata = screendata.resize((int(resize_width),int(resize_height)))
 screendata = np.asarray(screendata)
 
+#最大値を1に
+screendata = screendata / 255
+cut_data = cut_data / 255
+
 plt.imshow(screendata, cmap = "gray")
 plt.show()
 plt.imshow(cut_data)
